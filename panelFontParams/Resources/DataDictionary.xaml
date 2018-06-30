@@ -16,7 +16,7 @@
     <DataTemplate x:Key="FontDisplay">
         <TextBlock Text="{Binding}"
                            FontFamily="{Binding}" 
-                           FontSize="12"
+                           FontSize="10"
                            />
     </DataTemplate>
 

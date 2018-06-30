@@ -9,7 +9,8 @@
              
              xmlns:Converters="clr-namespace:panelFontParams.Converters" xmlns:VM_ViewModels="clr-namespace:panelFontParams.VM_ViewModels" x:Class="panelFontParams.ucFontParam"
              mc:Ignorable="d" 
-             d:DesignHeight="150" d:DesignWidth="400"
+             d:DesignHeight="150" d:DesignWidth="400" 
+             FontSize="10"
              
              >
 
@@ -156,7 +157,7 @@
                    VerticalAlignment="Center"  
                    Width="auto" Height="auto"               
                    >
-            <Run Text="ПРИМЕР"
+            <Run Text="Пример"
                      FontFamily="{Binding UcFontParam._fontFontCollection}"
                      FontSize="{Binding UcFontParam._fontFontSize}" 
                      FontWeight="{Binding UcFontParam._fontBold}"
