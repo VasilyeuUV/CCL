@@ -1,0 +1,46 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
+                    xmlns:ComponentModel="clr-namespace:System.ComponentModel;assembly=WindowsBase"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+
+    <!--Установленные в системе шрифты (Fonts), отсортированные по алфавиту-->
+    <CollectionViewSource x:Key="SortedFontsCollection" Source="{Binding Source={x:Static Fonts.SystemFontFamilies}}" >
+        <CollectionViewSource.SortDescriptions>
+            <ComponentModel:SortDescription PropertyName="Source" />
+        </CollectionViewSource.SortDescriptions>
+    </CollectionViewSource>
+
+    <!--Шрифты (Fonts) будут отображаться со своими стилями-->
+    <DataTemplate x:Key="FontDisplay">
+        <TextBlock Text="{Binding}"
+                           FontFamily="{Binding}" 
+                           FontSize="12"
+                           />
+    </DataTemplate>
+
+    <!--Список констант установленных в системе цветов (Colors) (знаю как подключить, но не знаю как применить)-->
+    <ObjectDataProvider ObjectInstance="{x:Type Colors}" 
+                            MethodName="GetProperties"
+                            x:Key="colorProperties"
+                            />
+
+    <!--Предустановленные размеры шрифта (FontSize)-->
+    <col:ArrayList x:Key="arrFontSize">
+        <sys:String>8</sys:String>
+        <sys:String>9</sys:String>
+        <sys:String>10</sys:String>
+        <sys:String>11</sys:String>
+        <sys:String>12</sys:String>
+        <sys:String>13</sys:String>
+        <sys:String>14</sys:String>
+        <sys:String>15</sys:String>
+        <sys:String>16</sys:String>
+        <sys:String>18</sys:String>
+    </col:ArrayList>
+
+    
+    
+    
+</ResourceDictionary>

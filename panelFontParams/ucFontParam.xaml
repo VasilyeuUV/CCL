@@ -1,0 +1,176 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:panelFontParams"     
+             
+             xmlns:const="clr-namespace:panelFontParams.Models"
+             
+             xmlns:Converters="clr-namespace:panelFontParams.Converters" xmlns:VM_ViewModels="clr-namespace:panelFontParams.VM_ViewModels" x:Class="panelFontParams.ucFontParam"
+             mc:Ignorable="d" 
+             d:DesignHeight="150" d:DesignWidth="400"
+             
+             >
+
+    <UserControl.Resources>
+
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/panelFontParams;component/Resources/DataDictionary.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/panelFontParams;component/Resources/IconsDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <Converters:BoolToUnderlineConverter x:Key="BoolToUnderlineConverter"/>
+            <Converters:BoolToItalicConverter x:Key="BoolToItalicConverter"/>
+            <Converters:BoolToBoldConverter x:Key="BoolToBoldConverter"/>
+        </ResourceDictionary>
+
+    </UserControl.Resources>
+
+
+    <UserControl.DataContext>
+        <VM_ViewModels:VM_FontParam/>
+    </UserControl.DataContext>
+
+
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <ToolBar Grid.Row="0" Grid.Column="0"
+                 Width="auto" Height="auto"
+                 >
+
+            <ComboBox x:Name="cbbFontFamily"
+                      ToolTip="Шрифт" 
+                      Padding="2,0,5,0"   
+                      ItemsSource="{Binding Mode=OneWay, Source={StaticResource SortedFontsCollection}}"
+                      ItemTemplate="{StaticResource FontDisplay}" 
+                      SelectedItem="{Binding UcFontParam._fontFontCollection}"
+                      />
+
+            <ComboBox x:Name="cbbFontSize"
+                      ToolTip="Размер шрифта"  
+                      Padding="5,0,2,0"    
+                      ItemsSource="{StaticResource arrFontSize}"
+                      SelectedItem="{Binding UcFontParam._fontFontSize}"
+                      />
+
+            <Separator Margin="2"/>
+
+            <ToggleButton x:Name="btnFontBold"
+                          Content="{StaticResource IconBold}" 
+                          IsChecked="{Binding UcFontParam._fontBold, Converter={StaticResource BoolToBoldConverter}}"
+                          />
+            <ToggleButton x:Name="btnFontItalic"
+                          IsChecked="{Binding UcFontParam._fontItalic, Converter={StaticResource BoolToItalicConverter}}"
+                          Content="{StaticResource IconItalic}"
+                          />
+            <ToggleButton x:Name="btnFontUnderline"
+                          IsChecked="{Binding UcFontParam._fontUnderline, Converter={StaticResource BoolToUnderlineConverter}}"
+                          Content="{StaticResource IconUnderline}"
+                          />
+        </ToolBar>
+
+        <ToolBar Grid.Row="1" Grid.Column="0"
+                 Width="auto" Height="auto"
+                 >
+
+            <TextBlock Text="Шрифт:" VerticalAlignment="Center"
+                       Margin="5,0,2,0"
+                       />
+
+            <ComboBox x:Name="cbbFontColor"
+                      Padding="2,0,5,0"
+                      Margin="5,2,5,0"
+                      ItemsSource="{x:Static const:M_ConstData.LstColors}"
+                      SelectedItem="{Binding UcFontParam._fontFontColor}"
+                      >
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <DockPanel LastChildFill="True">
+                            <Ellipse  DockPanel.Dock="Left"
+                                      Height="10" Width="10"
+                                      VerticalAlignment="Center" 
+                                      >
+                                <Ellipse.Fill>
+                                    <SolidColorBrush Color="{Binding}"/>
+                                </Ellipse.Fill>
+                            </Ellipse>
+                            <TextBlock Text="{Binding}" 
+                                       VerticalAlignment="Center" 
+                                       Margin="2"
+                                       />
+                        </DockPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+
+            <Separator Margin="2,0"/>
+
+            <TextBlock Text="Фон:" 
+                       VerticalAlignment="Center"
+                       Margin="5,0,2,0"
+                       />
+
+
+            <ComboBox Margin="5,2,0,0"
+                      Padding="5,0"
+                      ItemsSource="{x:Static const:M_ConstData.LstColors}" 
+                      SelectedItem="{Binding UcFontParam._fontTextBackground}"
+                      >
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <DockPanel LastChildFill="True">
+                            <Ellipse  DockPanel.Dock="Left"
+                                      Height="10" Width="10"
+                                      VerticalAlignment="Center"                        
+                                      >
+                                <Ellipse.Fill>
+                                    <SolidColorBrush Color="{Binding}"/>
+                                </Ellipse.Fill>
+                            </Ellipse>
+                            <TextBlock Text="{Binding}" 
+                                       VerticalAlignment="Center" 
+                                       Margin="2"
+                                       />
+                        </DockPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+
+        </ToolBar>
+
+        <TextBlock Grid.Row="2" Grid.Column="0"
+                   Margin="0,5" 
+                   Padding="5,3"
+                   HorizontalAlignment="Center" 
+                   VerticalAlignment="Center"  
+                   Width="auto" Height="auto"               
+                   >
+            <Run Text="ПРИМЕР"
+                     FontFamily="{Binding UcFontParam._fontFontCollection}"
+                     FontSize="{Binding UcFontParam._fontFontSize}" 
+                     FontWeight="{Binding UcFontParam._fontBold}"
+                     FontStyle="{Binding UcFontParam._fontItalic}"
+                     Foreground="{Binding UcFontParam._fontFontColor}"   
+                     TextDecorations="{Binding UcFontParam._fontUnderline}" 
+                     Background="{Binding UcFontParam._fontTextBackground}"
+                     />
+        </TextBlock>
+
+
+
+
+
+
+    </Grid>
+</UserControl>
