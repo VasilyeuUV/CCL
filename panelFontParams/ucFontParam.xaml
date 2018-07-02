@@ -55,28 +55,28 @@
                       Padding="2,0,5,0"   
                       ItemsSource="{Binding Mode=OneWay, Source={StaticResource SortedFontsCollection}}"
                       ItemTemplate="{StaticResource FontDisplay}" 
-                      SelectedItem="{Binding UcFontParam._fontFontCollection}"
+                      SelectedItem="{Binding UcFontParam.FontFontCollection}"
                       />
 
             <ComboBox x:Name="cbbFontSize"
                       ToolTip="Размер шрифта"  
                       Padding="5,0,2,0"    
                       ItemsSource="{StaticResource arrFontSize}"
-                      SelectedItem="{Binding UcFontParam._fontFontSize}"
+                      SelectedItem="{Binding UcFontParam.FontFontSize}"
                       />
 
             <Separator Margin="2"/>
 
             <ToggleButton x:Name="btnFontBold"
                           Content="{StaticResource IconBold}" 
-                          IsChecked="{Binding UcFontParam._fontBold, Converter={StaticResource BoolToBoldConverter}}"
+                          IsChecked="{Binding UcFontParam.FontBold, Converter={StaticResource BoolToBoldConverter}}"
                           />
             <ToggleButton x:Name="btnFontItalic"
-                          IsChecked="{Binding UcFontParam._fontItalic, Converter={StaticResource BoolToItalicConverter}}"
+                          IsChecked="{Binding UcFontParam.FontItalic, Converter={StaticResource BoolToItalicConverter}}"
                           Content="{StaticResource IconItalic}"
                           />
             <ToggleButton x:Name="btnFontUnderline"
-                          IsChecked="{Binding UcFontParam._fontUnderline, Converter={StaticResource BoolToUnderlineConverter}}"
+                          IsChecked="{Binding UcFontParam.FontUnderline, Converter={StaticResource BoolToUnderlineConverter}}"
                           Content="{StaticResource IconUnderline}"
                           />
         </ToolBar>
@@ -93,7 +93,7 @@
                       Padding="2,0,5,0"
                       Margin="5,2,5,0"
                       ItemsSource="{x:Static const:M_ConstData.LstColors}"
-                      SelectedItem="{Binding UcFontParam._fontFontColor}"
+                      SelectedItem="{Binding UcFontParam.FontFontColor}"
                       >
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
@@ -126,7 +126,7 @@
             <ComboBox Margin="5,2,0,0"
                       Padding="5,0"
                       ItemsSource="{x:Static const:M_ConstData.LstColors}" 
-                      SelectedItem="{Binding UcFontParam._fontTextBackground}"
+                      SelectedItem="{Binding UcFontParam.FontTextBackground}"
                       >
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
@@ -158,13 +158,13 @@
                    Width="auto" Height="auto"               
                    >
             <Run Text="Пример"
-                     FontFamily="{Binding UcFontParam._fontFontCollection}"
-                     FontSize="{Binding UcFontParam._fontFontSize}" 
-                     FontWeight="{Binding UcFontParam._fontBold}"
-                     FontStyle="{Binding UcFontParam._fontItalic}"
-                     Foreground="{Binding UcFontParam._fontFontColor}"   
-                     TextDecorations="{Binding UcFontParam._fontUnderline}" 
-                     Background="{Binding UcFontParam._fontTextBackground}"
+                     FontFamily="{Binding UcFontParam.FontFontCollection}"
+                     FontSize="{Binding UcFontParam.FontFontSize}" 
+                     FontWeight="{Binding UcFontParam.FontBold}"
+                     FontStyle="{Binding UcFontParam.FontItalic}"
+                     Foreground="{Binding UcFontParam.FontFontColor}"   
+                     TextDecorations="{Binding UcFontParam.FontUnderline}" 
+                     Background="{Binding UcFontParam.FontTextBackground}"
                      />
         </TextBlock>
 
