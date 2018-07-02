@@ -4,8 +4,23 @@ using System.Windows.Media;
 
 namespace panelFontParams.Models
 {
-    public class M_FontParams
+    public class M_FontParams : M_PropertyChanged
     {
+
+        //#############################################################################################################################
+        #region CONSTANTS
+
+        private string FONTNAME_DFLT = "Arial";
+        private FontFamily FONTCOLLECTION_DFLT = new FontFamily("Arial");
+        private string FONTSIZE_DFLT = "12";
+        private string FONTBOLD_DFLT = "Normal";
+        private string FONTITALIC_DFLT = "Normal";
+        private string FONTUNDERLINE_DFLT = "{x:Null}";
+        private string FONTCOLOR_DFLT = "Black";
+        private string TEXTBACKGROUND_DFLT = "Transparent";
+
+        #endregion // CONSTANTS
+
 
         //#############################################################################################################################
         #region FIELDS
@@ -25,14 +40,40 @@ namespace panelFontParams.Models
         //#############################################################################################################################
         #region PROPERTIES
 
-        public string _fontFontCollectionName { get; set; }   // название шрифта (FontFamily Name) 
-        public FontFamily _fontFontCollection { get; set; }   // шрифт (FontFamily)      
-        public string _fontFontSize { get; set; }         // размер шрифта (FontSize)
-        public string _fontFontColor { get; set; }        // цвет текста (Font Color)
-        public string _fontTextBackground { get; set; }   // цвет фона (Background Color)
-        public string _fontBold { get; set; }          // жирный шрифт (Font Weight)
-        public string _fontItalic { get; set; }        // курсив шрифт (Font Style)
-        public string _fontUnderline { get; set; }     // подчеркнутый шрифт (Font Underline)
+
+        /// <summary>
+        /// название шрифта (FontFamily Name)
+        /// </summary>
+        public string FontFontCollectionName
+        {
+            get
+            {
+                if (_fontFontCollectionName == null)
+                {
+                    FontFontCollectionName = "Arial";
+                }
+                return _fontFontCollectionName;
+            }
+            set
+            {
+                _fontFontCollectionName = value;
+                OnPropertyChanged("FontFontCollectionName");
+            }
+        }
+        
+
+
+        public FontFamily FontFontCollection { get => _fontFontCollection; set => _fontFontCollection = value; }
+        public string FontFontSize { get => _fontFontSize; set => _fontFontSize = value; }
+        public string FontBold { get => _fontBold; set => _fontBold = value; }
+        public string FontItalic { get => _fontItalic; set => _fontItalic = value; }
+        public string FontUnderline { get => _fontUnderline; set => _fontUnderline = value; }
+        public string FontFontColor { get => _fontFontColor; set => _fontFontColor = value; }
+        public string FontTextBackground { get => _fontTextBackground; set => _fontTextBackground = value; }
+
+
+
+
 
 
         #endregion // PROPERTIES
@@ -46,15 +87,16 @@ namespace panelFontParams.Models
 
         public M_FontParams()
         {
-            _fontFontCollectionName = "Arial";
-            _fontFontCollection = InstallFontFamily(_fontFontCollectionName);
-            _fontFontSize = "12";
-            _fontFontColor = "Black";
-            _fontTextBackground = "Transparent";
-            _fontBold = "Normal";
-            _fontItalic = "Normal";
-            _fontUnderline = "{x:Null}";
+            FontFontCollectionName = "Arial";
+            FontFontCollection = InstallFontFamily(FontFontCollectionName);
+            FontFontSize = "12";
+            FontFontColor = "Black";
+            FontTextBackground = "Transparent";
+            FontBold = "Normal";
+            FontItalic = "Normal";
+            FontUnderline = "{x:Null}";
         }
+
 
         #endregion // CTOR
 
@@ -82,7 +124,7 @@ namespace panelFontParams.Models
             catch (Exception)
             {
                 ff = Fonts.SystemFontFamilies.FirstOrDefault();
-                _fontFontCollectionName = ff.Source;
+                FontFontCollectionName = ff.Source;
             }
             return ff;
         }
