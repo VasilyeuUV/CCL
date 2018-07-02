@@ -50,7 +50,7 @@ namespace panelFontParams.Models
             {
                 if (_fontFontCollectionName == null)
                 {
-                    FontFontCollectionName = "Arial";
+                    FontFontCollectionName = FONTNAME_DFLT;
                 }
                 return _fontFontCollectionName;
             }
@@ -60,21 +60,157 @@ namespace panelFontParams.Models
                 OnPropertyChanged("FontFontCollectionName");
             }
         }
+
+
+        /// <summary>
+        /// шрифт (FontFamily) 
+        /// </summary>
+        public FontFamily FontFontCollection
+        {
+            get
+            {
+                if (_fontFontCollection == null)
+                {
+                    FontFontCollection = FONTCOLLECTION_DFLT;
+                }
+                return _fontFontCollection;
+            }
+            set
+            {
+                _fontFontCollection = value;
+                OnPropertyChanged("FontFontCollection");
+            }
+        }
+
+
+        /// <summary>
+        /// размер шрифта (FontSize)
+        /// </summary>
+        public string FontFontSize
+        {
+            get
+            {
+                if (_fontFontSize == null)
+                {
+                    FontFontSize = FONTSIZE_DFLT;
+                }
+                return _fontFontSize;
+            }
+            set
+            {
+                _fontFontSize = value;
+                OnPropertyChanged("FontFontSize");
+            }
+        }
+
+
+        /// <summary>
+        /// жирный шрифт (Font Weight)
+        /// </summary>
+        public string FontBold
+        {
+            get
+            {
+                if (_fontBold == null)
+                {
+                    FontBold = FONTBOLD_DFLT;
+                }
+                return _fontBold;
+            }
+            set
+            {
+                _fontBold = value;
+                OnPropertyChanged("FontBold");
+            }
+        }
+
+
+
+        /// <summary>
+        /// курсив шрифт (Font Style)
+        /// </summary>
+        public string FontItalic
+        {
+            get
+            {
+                if (_fontItalic == null)
+                {
+                    FontItalic = FONTITALIC_DFLT;
+                }
+                return _fontItalic;
+            }
+            set
+            {
+                _fontItalic = value;
+                OnPropertyChanged("FontItalic");
+            }
+        }
+
+
+        /// <summary>
+        /// подчеркнутый шрифт (Font Underline)
+        /// </summary>
+        public string FontUnderline
+        {
+            get
+            {
+                if (_fontUnderline == null)
+                {
+                    FontUnderline = FONTUNDERLINE_DFLT;
+                }
+                return _fontUnderline;
+            }
+            set
+            {
+                _fontUnderline = value;
+                OnPropertyChanged("FontUnderline");
+            }
+        }
+
+
+
+
+        /// <summary>
+        /// цвет текста (Font Color)
+        /// </summary>
+        public string FontFontColor
+        {
+            get
+            {
+                if (_fontFontColor == null)
+                {
+                    FontFontColor = FONTCOLOR_DFLT;
+                }
+                return _fontFontColor;
+            }
+            set
+            {
+                _fontFontColor = value;
+                OnPropertyChanged("FontFontColor");
+            }
+        }
+
+
+        /// <summary>
+        /// цвет фона (Background Color)
+        /// </summary>
+        public string FontTextBackground
+        {
+            get
+            {
+                if (_fontTextBackground == null)
+                {
+                    FontTextBackground = TEXTBACKGROUND_DFLT;
+                }
+                return _fontTextBackground;
+            }
+            set
+            {
+                _fontTextBackground = value;
+                OnPropertyChanged("FontTextBackground");
+            }
+        }
         
-
-
-        public FontFamily FontFontCollection { get => _fontFontCollection; set => _fontFontCollection = value; }
-        public string FontFontSize { get => _fontFontSize; set => _fontFontSize = value; }
-        public string FontBold { get => _fontBold; set => _fontBold = value; }
-        public string FontItalic { get => _fontItalic; set => _fontItalic = value; }
-        public string FontUnderline { get => _fontUnderline; set => _fontUnderline = value; }
-        public string FontFontColor { get => _fontFontColor; set => _fontFontColor = value; }
-        public string FontTextBackground { get => _fontTextBackground; set => _fontTextBackground = value; }
-
-
-
-
-
 
         #endregion // PROPERTIES
 
