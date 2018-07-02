@@ -1,17 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using panelFontParams.Models;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Test
 {
@@ -23,6 +11,33 @@ namespace Test
         public MainWindow()
         {
             InitializeComponent();
+
+
+            //    M_FontParams _tnpFontParams = new M_FontParams();
+            //    _tnpFontParams.
+
+
+            //    _tnpFontParams = panelFontParams.VM_ViewModels.VM_FontParam.Instance.UcFontParam;
+
+            //    VewFontParam(_tnpFontParams);
+
+            //}
+
+
+
+            //private static void VewFontParam(M_FontParams _tnpFontParams)
+            //{
+            //    MessageBox.Show("Выбрано:\n" +
+            //        "- шрифт: \t\t" + _tnpFontParams._fontFontCollectionName + ";\n" +
+            //        "- размер: \t\t" + _tnpFontParams._fontFontSize + ";\n" +
+            //        "- выделение: \t" + _tnpFontParams._fontBold + ";\n" +
+            //        "- стиль: \t\t" + _tnpFontParams._fontItalic + ";\n" +
+            //        "- подчеркивание: \t" + _tnpFontParams._fontUnderline + ";\n" +
+            //        "- цвет текста: \t" + _tnpFontParams._fontFontColor + ";\n" +
+            //        "- цвет выделения: \t" + _tnpFontParams._fontTextBackground + ";\n"
+            //                                  , "Результат",
+            //                                  MessageBoxButton.OK,
+            //                                  MessageBoxImage.Information);
         }
     }
 }

@@ -6,13 +6,25 @@
         xmlns:local="clr-namespace:Test"
         xmlns:panelFontParams="clr-namespace:panelFontParams;assembly=panelFontParams" x:Class="Test.MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800"
+    
+        xmlns:pnlFP="clr-namespace:panelFontParams;assembly=panelFontParams"
+        xmlns:vmFP="clr-namespace:panelFontParams.VM_ViewModels;assembly=panelFontParams"
+    
+    >
+
+    <Window.Resources>
+        <vmFP:VM_FontParam x:Key="vmFP"/>
+    </Window.Resources>
+    
+    
     <StackPanel VerticalAlignment="Top"
                 HorizontalAlignment="Center">
         
         <panelFontParams:ucFontParam Height="Auto" Width="Auto"/>
-        
-        
+        <TextBlock Text="{Binding Source={StaticResource vmFP}, Path=UcFontParam._fontFontCollectionName}"/>
+
+
 
 
 

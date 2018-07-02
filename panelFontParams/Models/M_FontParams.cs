@@ -8,9 +8,24 @@ namespace panelFontParams.Models
     {
 
         //#############################################################################################################################
+        #region FIELDS
+
+        private string _fontFontCollectionName;     // название шрифта (FontFamily Name)
+        private FontFamily _fontFontCollection;     // шрифт (FontFamily)      
+        private string _fontFontSize;               // размер шрифта (FontSize)
+        private string _fontBold;                   // жирный шрифт (Font Weight)
+        private string _fontItalic;                 // курсив шрифт (Font Style)
+        private string _fontUnderline;              // подчеркнутый шрифт (Font Underline)
+        private string _fontFontColor;              // цвет текста (Font Color)
+        private string _fontTextBackground;         // цвет фона (Background Color)
+
+        #endregion // FIELDS
+
+
+        //#############################################################################################################################
         #region PROPERTIES
 
-        public string _fontFontCollectionName { get; set; }    // название шрифта (FontFamily Name)
+        public string _fontFontCollectionName { get; set; }   // название шрифта (FontFamily Name) 
         public FontFamily _fontFontCollection { get; set; }   // шрифт (FontFamily)      
         public string _fontFontSize { get; set; }         // размер шрифта (FontSize)
         public string _fontFontColor { get; set; }        // цвет текста (Font Color)
