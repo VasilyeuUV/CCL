@@ -22,7 +22,8 @@
                 HorizontalAlignment="Center">
         
         <panelFontParams:ucFontParam Height="Auto" Width="Auto"/>
-        <TextBlock Text="{Binding Source={StaticResource vmFP}, Path=UcFontParam._fontFontCollectionName}"/>
+        <TextBlock Text="{Binding Source={StaticResource vmFP}, Path=UcFontParam.FontFontCollectionName,
+            Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
 
 
