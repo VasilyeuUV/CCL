@@ -125,7 +125,7 @@
 
             <ComboBox Margin="5,2,0,0"
                       Padding="5,0"
-                      ItemsSource="{x:Static const:M_ConstData.LstColors}" 
+                      ItemsSource="{x:Static const:M_ConstData.LstColorsBackgr}" 
                       SelectedItem="{Binding UcFontParam.FontTextBackground}"
                       >
                 <ComboBox.ItemTemplate>

@@ -6,7 +6,8 @@
 
 
     <!--Установленные в системе шрифты (Fonts), отсортированные по алфавиту-->
-    <CollectionViewSource x:Key="SortedFontsCollection" Source="{Binding Source={x:Static Fonts.SystemFontFamilies}}" >
+    <CollectionViewSource x:Key="SortedFontsCollection"  
+                          Source="{Binding Source={x:Static Fonts.SystemFontFamilies}}" >
         <CollectionViewSource.SortDescriptions>
             <ComponentModel:SortDescription PropertyName="Source" />
         </CollectionViewSource.SortDescriptions>
@@ -28,6 +29,7 @@
 
     <!--Предустановленные размеры шрифта (FontSize)-->
     <col:ArrayList x:Key="arrFontSize">
+        <sys:String>= по умолч. =</sys:String>
         <sys:String>8</sys:String>
         <sys:String>9</sys:String>
         <sys:String>10</sys:String>

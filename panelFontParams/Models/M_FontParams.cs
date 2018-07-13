@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Media;
 
@@ -10,14 +11,14 @@ namespace panelFontParams.Models
         //#############################################################################################################################
         #region CONSTANTS
 
-        private string FONTNAME_DFLT = "Arial";
+        private string FONTNAME_DFLT = "= по умолч. =";
         private FontFamily FONTCOLLECTION_DFLT = new FontFamily("Arial");
-        private string FONTSIZE_DFLT = "12";
+        private string FONTSIZE_DFLT = "= по умолч. =";
         private string FONTBOLD_DFLT = "Normal";
         private string FONTITALIC_DFLT = "Normal";
         private string FONTUNDERLINE_DFLT = "{x:Null}";
-        private string FONTCOLOR_DFLT = "Black";
-        private string TEXTBACKGROUND_DFLT = "Transparent";
+        private string FONTCOLOR_DFLT = "= по умолч. =";
+        private string TEXTBACKGROUND_DFLT = "= по умолч. =";
 
         #endregion // CONSTANTS
 
@@ -35,6 +36,27 @@ namespace panelFontParams.Models
         private string _fontTextBackground;         // цвет фона (Background Color)
 
         #endregion // FIELDS
+
+
+
+        //#############################################################################################################################
+        #region CTOR
+
+        public M_FontParams()
+        {
+            FontFontCollectionName = "= по умолч. =";
+            FontFontCollection = InstallFontFamily(FontFontCollectionName);
+            FontFontSize = "= по умолч. =";
+            FontFontColor = "= по умолч. =";
+            FontTextBackground = "= по умолч. =";
+            FontBold = "Normal";
+            FontItalic = "Normal";
+            FontUnderline = "{x:Null}";
+        }
+
+
+        #endregion // CTOR
+
 
 
         //#############################################################################################################################
@@ -200,7 +222,7 @@ namespace panelFontParams.Models
             {
                 if (_fontTextBackground == null)
                 {
-                    FontTextBackground = TEXTBACKGROUND_DFLT;
+                    _fontTextBackground = TEXTBACKGROUND_DFLT;
                 }
                 return _fontTextBackground;
             }
@@ -218,23 +240,6 @@ namespace panelFontParams.Models
 
 
 
-        //#############################################################################################################################
-        #region CTOR
-
-        public M_FontParams()
-        {
-            FontFontCollectionName = "Arial";
-            FontFontCollection = InstallFontFamily(FontFontCollectionName);
-            FontFontSize = "12";
-            FontFontColor = "Black";
-            FontTextBackground = "Transparent";
-            FontBold = "Normal";
-            FontItalic = "Normal";
-            FontUnderline = "{x:Null}";
-        }
-
-
-        #endregion // CTOR
 
 
 
