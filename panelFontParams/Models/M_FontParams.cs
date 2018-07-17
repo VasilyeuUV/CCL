@@ -16,7 +16,7 @@ namespace panelFontParams.Models
         private string FONTSIZE_DFLT = "= по умолч. =";
         private string FONTBOLD_DFLT = "Normal";
         private string FONTITALIC_DFLT = "Normal";
-        private string FONTUNDERLINE_DFLT = "{x:Null}";
+        private string FONTUNDERLINE_DFLT = "{x:Null}"; 
         private string FONTCOLOR_DFLT = "= по умолч. =";
         private string TEXTBACKGROUND_DFLT = "= по умолч. =";
 
@@ -60,6 +60,14 @@ namespace panelFontParams.Models
 
 
         //#############################################################################################################################
+        #region DELEGATES_&_EVENTS
+
+
+
+
+        #endregion // DELEGATES_&_EVENTS
+
+        //#############################################################################################################################
         #region PROPERTIES
 
 
@@ -93,7 +101,7 @@ namespace panelFontParams.Models
             {
                 if (_fontFontCollection == null)
                 {
-                    FontFontCollection = FONTCOLLECTION_DFLT;
+                    _fontFontCollection = FONTCOLLECTION_DFLT;
                 }
                 return _fontFontCollection;
             }
@@ -114,7 +122,7 @@ namespace panelFontParams.Models
             {
                 if (_fontFontSize == null)
                 {
-                    FontFontSize = FONTSIZE_DFLT;
+                    _fontFontSize = FONTSIZE_DFLT;
                 }
                 return _fontFontSize;
             }
@@ -135,7 +143,7 @@ namespace panelFontParams.Models
             {
                 if (_fontBold == null)
                 {
-                    FontBold = FONTBOLD_DFLT;
+                    _fontBold = FONTBOLD_DFLT;
                 }
                 return _fontBold;
             }
@@ -157,7 +165,7 @@ namespace panelFontParams.Models
             {
                 if (_fontItalic == null)
                 {
-                    FontItalic = FONTITALIC_DFLT;
+                    _fontItalic = FONTITALIC_DFLT;
                 }
                 return _fontItalic;
             }
@@ -178,7 +186,7 @@ namespace panelFontParams.Models
             {
                 if (_fontUnderline == null)
                 {
-                    FontUnderline = FONTUNDERLINE_DFLT;
+                    _fontUnderline = FONTUNDERLINE_DFLT;
                 }
                 return _fontUnderline;
             }
@@ -201,7 +209,7 @@ namespace panelFontParams.Models
             {
                 if (_fontFontColor == null)
                 {
-                    FontFontColor = FONTCOLOR_DFLT;
+                    _fontFontColor = FONTCOLOR_DFLT;
                 }
                 return _fontFontColor;
             }

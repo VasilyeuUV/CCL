@@ -4,27 +4,35 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Test"
-        xmlns:panelFontParams="clr-namespace:panelFontParams;assembly=panelFontParams" x:Class="Test.MainWindow"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
+    
     
         xmlns:pnlFP="clr-namespace:panelFontParams;assembly=panelFontParams"
-        xmlns:vmFP="clr-namespace:panelFontParams.VM_ViewModels;assembly=panelFontParams"
+        xmlns:vmPnlFP="clr-namespace:panelFontParams.VM_ViewModels;assembly=panelFontParams"
+        xmlns:vm="clr-namespace:Test.VM_ViewModels" x:Class="Test.MainWindow"
     
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"   
     >
 
     <Window.Resources>
-        <vmFP:VM_FontParam x:Key="vmFP"/>
+        <vmPnlFP:VM_FontParam x:Key="vm_pnlFP"/>
     </Window.Resources>
-    
-    
+
+
+
     <StackPanel VerticalAlignment="Top"
                 HorizontalAlignment="Center">
-        
-        <panelFontParams:ucFontParam Height="Auto" Width="Auto"/>
-        <TextBlock Text="{Binding Source={StaticResource vmFP}, Path=UcFontParam.FontFontCollectionName,
-            Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
+        <pnlFP:ucFontParam x:Name="panelFP"
+                           Height="Auto" Width="Auto"
+                           
+                           />
+
+
+        <TextBlock Text="{Binding UcFontParam.FontFontCollectionName, Source={StaticResource vm_pnlFP}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBlock Text="{Binding UcFontParam.FontFontSize, Source={StaticResource vm_pnlFP}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBlock Text="{Binding UcFontParam.FontFontColor, Source={StaticResource vm_pnlFP}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBlock Text="{Binding UcFontParam.FontTextBackground, Source={StaticResource vm_pnlFP}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
 
 

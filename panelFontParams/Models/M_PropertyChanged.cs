@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace panelFontParams.Models
 {
@@ -12,18 +13,26 @@ namespace panelFontParams.Models
 
         protected void OnPropertyChanged(PropertyChangedEventArgs e)
         {
-            PropertyChanged?.Invoke(this, e);
+            //PropertyChanged?.Invoke(this, e);     // упрощенная запись нижеследующего
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (handler != null)
+            {
+                handler(this, e);
+            }   
         }
 
-        protected virtual void OnPropertyChanged(string propertyName)
-        {
-            OnPropertyChanged(new PropertyChangedEventArgs(propertyName));
-        }
+
         // ОСТАВИТЬ. Другой вариант реализации
         //public void OnPropertyChanged([CallerMemberName]string prop = "")
         //{
         //    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
         //}
+
+        protected void OnPropertyChanged(string propertyName)
+        {
+            OnPropertyChanged(new PropertyChangedEventArgs(propertyName));
+        }
+
 
         #endregion // Реализация интерфейса INotifyPropertyChanged
 

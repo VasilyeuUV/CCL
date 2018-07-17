@@ -1,4 +1,4 @@
-﻿using panelFontParams.Models;
+﻿using panelFontParams.VM_ViewModels;
 using System.Windows;
 
 namespace Test
@@ -11,18 +11,6 @@ namespace Test
         public MainWindow()
         {
             InitializeComponent();
-
-
-            //    M_FontParams _tnpFontParams = new M_FontParams();
-            //    _tnpFontParams.
-
-
-            //    _tnpFontParams = panelFontParams.VM_ViewModels.VM_FontParam.Instance.UcFontParam;
-
-            //    VewFontParam(_tnpFontParams);
-
-            //}
-
 
 
             //private static void VewFontParam(M_FontParams _tnpFontParams)
@@ -39,5 +27,6 @@ namespace Test
             //                                  MessageBoxButton.OK,
             //                                  MessageBoxImage.Information);
         }
+
     }
 }

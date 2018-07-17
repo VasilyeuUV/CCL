@@ -59,6 +59,11 @@ namespace panelFontParams.VM_ViewModels
                 {
                     UcFontParam = new M_FontParams();
                 }
+                if (UcFontParam != null)
+                {
+                    OnPropertyChanged("UcFontParam");
+                }
+                
                 return _ucFontParam;
             }
             set
